@@ -1,0 +1,24 @@
+public class Spawn {
+	
+	private Handler handler;
+	
+	private int scoreKeep = 0;
+	
+	private HUD hud;
+	
+	
+	public Spawn(Handler handler, HUD hud) {
+		this.handler = handler;
+		
+	}
+	public void tick() {
+		scoreKeep++;
+		
+if (scoreKeep >= 100) {
+			scoreKeep = 0;
+			hud.setLevel(hud.getLevel() + 1);
+			
+		}
+	}
+
+}
