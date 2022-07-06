@@ -1,6 +1,6 @@
 # waveClone
 
-This files make up an un finnished game. 
+These files make up an un finnished game. 
 
 i am getting an error:
   
