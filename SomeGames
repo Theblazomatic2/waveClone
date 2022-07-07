@@ -29,7 +29,7 @@ public class SomeGames extends Canvas implements Runnable{
 		r = new Random();
 		for(int i = 0; i < 1; i++) {
 			handler.addObject(new Player(WIDTH/2-32, HEIGHT/2-32, ID.Player, handler));
-			
+			handler.addObject(new SmartEnemy(r.nextInt(SomeGames.WIDTH), r.nextInt(SomeGames.HEIGHT), ID.SmartEnemy, handler));
 		//	for(int a = 0; a < 20;a ++);
 		//	handler.addObject(new BasicEnemy(r.nextInt(WIDTH), r.nextInt(HEIGHT), ID.BasicEnemy, handler));
 			//handler.addObject(new Player(WIDTH/2-64, HEIGHT/2-32, ID.Player2));
@@ -96,7 +96,7 @@ public class SomeGames extends Canvas implements Runnable{
 		Graphics g = bs.getDrawGraphics();
 		
 		g.setColor(Color.black);
-		g.fillRect(0, 0, WIDTH, HEIGHT);
+		g.fillRect((int)0,(int)0, WIDTH, HEIGHT);
 		
 		handler.render(g);
 		hud.render(g);
@@ -106,7 +106,7 @@ public class SomeGames extends Canvas implements Runnable{
 		
 	}
 	
-	public static int clamp(int var, int min, int max) {
+	public static float clamp(float var, float min, float max) {
 		if( var >= max)
 			return var = max;
 		else if (var <= min)
